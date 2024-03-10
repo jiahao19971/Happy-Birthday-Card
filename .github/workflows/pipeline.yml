@@ -13,7 +13,7 @@ env:
     IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-    build_backend:
+    build_birthday:
       environment: prod 
       runs-on: ubuntu-latest
       env:      
