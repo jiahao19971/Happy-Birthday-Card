@@ -58,13 +58,13 @@ jobs:
         with:
           context: .
           push: true
-          secrets: |
-            "NAME=${{ secrets.NAME }}" 
-            "PIC=${{ secrets.PIC }}" 
-            "NICKNAME=${{ secrets.NICKNAME }}" 
-            "SCROLL_MSG=${{ secrets.SCROLL_MSG }}" 
-            "HBD_MSG=${{ secrets.HBD_MSG }}"
-            "OPEN_DATE=${{ secrets.OPEN_DATE }}"
+          build-args: |
+            NAME=${{ secrets.NAME }} 
+            PIC=${{ secrets.PIC }} 
+            NICKNAME=${{ secrets.NICKNAME }} 
+            SCROLL_MSG=${{ secrets.SCROLL_MSG }} 
+            HBD_MSG=${{ secrets.HBD_MSG }}
+            OPEN_DATE=${{ secrets.OPEN_DATE }}
           builder: ${{ steps.buildx.outputs.name }}
           file: Dockerfile
           tags: ${{ steps.prepare.outputs.docker_image }}:latest
