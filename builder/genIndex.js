@@ -23,7 +23,7 @@ const genIndex = function (markup) {
       "{{^HBD_MSG}}",
       process.env.HBD_MSG || "Wish you a very Happy Birthday"
     )
-    .replace("{{^NAME}}", process.env.NAME)
+    .replace("{{^NAME}}", process.env.NICKNAME || process.env.NAME)
     .replace("{{^NICKNAME}}", process.env.NICKNAME || process.env.NAME);
 
   fs.writeFileSync(path.join(__dirname, "../src/index.html"), html, {
