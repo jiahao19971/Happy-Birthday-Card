@@ -1,8 +1,12 @@
 version: '3.8'
 services:
   birthday:
-    image: test:test
+    build:
+      context: .
     restart: always
+    volumes:
+      - ./local:/app/local
+      - ./.env:/app/.env
     ports:
-      - '8080:8080'
+      - 1234:1234
 
