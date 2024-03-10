@@ -53,7 +53,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}
 
-      - name: Build backend image
+      - name: Build birthday image
         uses: docker/build-push-action@v5
         with:
           context: .
